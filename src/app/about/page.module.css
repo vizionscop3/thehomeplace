@@ -1,0 +1,162 @@
+.page {
+  min-height: 100vh;
+}
+
+/* Room Header */
+.roomHeader {
+  background: linear-gradient(135deg, var(--color-green-light) 0%, var(--color-bg) 100%);
+  padding: var(--space-3xl) 0;
+  text-align: center;
+}
+
+.roomLabel {
+  display: inline-block;
+  background: var(--color-green);
+  color: var(--color-white);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.metaphor {
+  font-style: italic;
+  color: var(--color-medium);
+  font-size: 1.125rem;
+}
+
+/* Founders Section */
+.founders {
+  background: var(--color-white);
+}
+
+.founderGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.founderCard {
+  text-align: center;
+}
+
+.founderImage {
+  margin-bottom: var(--space-lg);
+}
+
+.imagePlaceholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--color-purple-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: var(--color-purple);
+  font-weight: 600;
+}
+
+.founderCard h3 {
+  color: var(--color-purple);
+  margin-bottom: var(--space-xs);
+}
+
+.founderRole {
+  color: var(--color-gold);
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+}
+
+.founderBio {
+  color: var(--color-medium);
+  line-height: 1.7;
+}
+
+/* Mission Section */
+.mission {
+  background: var(--color-bg);
+}
+
+.missionStatement {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto var(--space-2xl);
+  text-align: center;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.valueItem {
+  text-align: center;
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.valueIcon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: var(--space-md);
+}
+
+.valueItem h4 {
+  color: var(--color-green);
+  margin-bottom: var(--space-sm);
+}
+
+.valueItem p {
+  color: var(--color-medium);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Philosophy Section */
+.philosophy {
+  background: var(--color-purple);
+  color: var(--color-white);
+}
+
+.philosophyQuote {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.philosophyQuote p {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.8;
+  margin-bottom: var(--space-lg);
+}
+
+.philosophyQuote cite {
+  color: var(--color-gold-light);
+  font-style: normal;
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .founderGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .philosophyQuote p {
+    font-size: 1.1rem;
+  }
+}

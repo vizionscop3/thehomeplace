@@ -1,0 +1,186 @@
+/**
+ * Floor Plan Styles
+ * Interactive SVG floor plan navigation per PRD §3.1, §3.2
+ */
+
+.floor-plan-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+}
+
+.floor-plan-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Room hit areas */
+.floor-plan-room {
+  cursor: pointer;
+  transition: var(--transition-default);
+}
+
+.floor-plan-room:focus {
+  outline: none;
+}
+
+.floor-plan-room:focus-visible .room-fill {
+  stroke: var(--color-gold);
+  stroke-width: 3;
+}
+
+/* Room fill states */
+.room-fill {
+  fill: var(--color-white);
+  stroke: var(--color-dark);
+  stroke-width: 2;
+  transition: var(--transition-default);
+}
+
+.floor-plan-room:hover .room-fill {
+  fill: var(--color-green-light);
+}
+
+.floor-plan-room[data-active="true"] .room-fill {
+  fill: var(--color-purple-light);
+  stroke: var(--color-purple);
+  stroke-width: 3;
+}
+
+/* Room-specific hover colors */
+.floor-plan-room[data-room="room-entryway"]:hover .room-fill {
+  fill: var(--color-purple-light);
+}
+
+.floor-plan-room[data-room="room-living"]:hover .room-fill,
+.floor-plan-room[data-room="room-backyard"]:hover .room-fill {
+  fill: var(--color-green-light);
+}
+
+.floor-plan-room[data-room="room-kitchen"]:hover .room-fill {
+  fill: var(--color-gold-light);
+}
+
+.floor-plan-room[data-room="room-study"]:hover .room-fill {
+  fill: var(--color-purple-light);
+}
+
+/* Room labels */
+.room-label {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  fill: var(--color-dark);
+  pointer-events: none;
+  text-anchor: middle;
+}
+
+/* Walls and structure */
+.floor-plan-walls {
+  fill: none;
+  stroke: var(--color-dark);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Tooltip */
+.floor-plan-tooltip {
+  position: absolute;
+  background: var(--color-dark);
+  color: var(--color-white);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: var(--transition-fast);
+  z-index: 100;
+  white-space: nowrap;
+}
+
+.floor-plan-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile room cards (shown on mobile, hidden on desktop) */
+.mobile-room-cards {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .floor-plan-svg-wrapper {
+    display: none;
+  }
+  
+  .mobile-room-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+  
+  .mobile-room-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-light);
+    text-decoration: none;
+    color: var(--color-dark);
+    transition: var(--transition-default);
+  }
+  
+  .mobile-room-card:hover {
+    border-color: var(--color-green);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+  
+  .mobile-room-card:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+  
+  .mobile-room-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .mobile-room-content h3 {
+    margin-bottom: var(--space-xs);
+    color: var(--color-dark);
+  }
+  
+  .mobile-room-content p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--color-medium);
+  }
+}
+
+/* Mini floor plan (persistent nav) */
+.mini-floor-plan {
+  width: 120px;
+  height: auto;
+}
+
+.mini-floor-plan .room-fill {
+  stroke-width: 1;
+}
+
+.mini-floor-plan .room-label {
+  font-size: 8px;
+}

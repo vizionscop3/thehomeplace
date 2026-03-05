@@ -1,7 +1,11 @@
 {
-  "name": "thehomeplace",
+  "name": "the-home-place",
   "version": "0.1.0",
   "private": true,
+  "description": "The Home Place - A multi-faith worship community website with interactive floor plan navigation",
+  "author": {
+    "name": "Vizion Digital Solutions"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

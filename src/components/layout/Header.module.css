@@ -1,0 +1,127 @@
+.header {
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--container-padding);
+  gap: var(--space-lg);
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--color-purple);
+}
+
+.logoText {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.desktopNav {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.navLink {
+  font-weight: 500;
+  color: var(--color-dark);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  transition: var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--color-green);
+  background: var(--color-green-light);
+}
+
+.navLink.active {
+  color: var(--color-purple);
+  background: var(--color-purple-light);
+}
+
+.mobileMenuButton {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  position: relative;
+}
+
+.menuIcon,
+.menuIcon::before,
+.menuIcon::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-dark);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: var(--transition-fast);
+}
+
+.menuIcon {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menuIcon::before {
+  content: '';
+  top: -6px;
+}
+
+.menuIcon::after {
+  content: '';
+  top: 6px;
+}
+
+.mobileNav {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: block;
+  }
+
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    box-shadow: var(--shadow-hover);
+    padding: var(--space-md);
+    gap: var(--space-xs);
+  }
+
+  .mobileNavLink {
+    display: block;
+    padding: var(--space-md);
+    color: var(--color-dark);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+  }
+
+  .mobileNavLink:hover,
+  .mobileNavLink.active {
+    background: var(--color-purple-light);
+    color: var(--color-purple);
+  }
+}
