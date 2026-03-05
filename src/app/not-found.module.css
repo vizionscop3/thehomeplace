@@ -1,0 +1,46 @@
+.wrapper {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.code {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-purple);
+}
+
+.divider {
+  width: 1px;
+  height: 2rem;
+  background: var(--color-light);
+}
+
+.message {
+  color: var(--color-medium);
+  font-size: 1rem;
+}
+
+.homeLink {
+  width: 100%;
+  margin-top: var(--space-lg);
+  display: inline-block;
+  text-align: center;
+  color: var(--color-green);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.homeLink:hover {
+  color: var(--color-purple);
+}
